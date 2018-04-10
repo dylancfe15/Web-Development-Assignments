@@ -7,7 +7,7 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
-
+var h2 = document.querySelector("h2");
 
 init();
 
@@ -41,6 +41,7 @@ function setupSquares(){
 				resetButton.textContent = "Play Again?"
 				changeColors(clickedColor);
 				h1.style.background = clickedColor;
+				h2.textContent = "Congrats :)";
 			} else {
 				this.style.background = "#232323";
 				messageDisplay.textContent = "Try Again"
@@ -72,7 +73,7 @@ function reset(){
 			});
 			squares[i].addEventListener("mouseover",function(){
 				this.style.borderRadius = "25%";
-				this.style.opacity = "0.2";
+				this.style.opacity = "0.3";
 			});
 		} else {
 			squares[i].style.display = "none";
@@ -81,6 +82,7 @@ function reset(){
 	}
 
 	h1.style.background = "steelblue";
+	h2.textContent = "";
 }
 
 resetButton.addEventListener("click", function(){
